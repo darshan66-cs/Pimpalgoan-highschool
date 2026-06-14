@@ -1,0 +1,26 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Where uploaded media files (photos) will be stored
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "notices"
+    label: "कार्यक्रम व सूचना"
+    label_singular: "सूचना / कार्यक्रम"
+    files:
+      - name: "notices"
+        label: "सर्व सूचना"
+        file: "notices.json"
+        format: "json"
+        fields:
+          - name: "items"
+            label: "सूचना यादी"
+            label_singular: "सूचना"
+            widget: "list"
+            fields:
+              - { name: "title", label: "शीर्षक", widget: "string" }
+              - { name: "date", label: "दिनांक", widget: "string", hint: "उदा. २०२६-०१-१५" }
+              - { name: "description", label: "वर्णन", widget: "text" }
